@@ -1,16 +1,15 @@
-function openOrSenior(data){
-    let buba = []
-    for (i=0 ; i< data.length; i++){
-        if (data[i][0] >= 55 && data[i][1] > 7){
-            buba[i] = "Senior"
-        }
-        else{
-            buba[i] = "Open"
-        }
+function comp(a, b){
+    for (let i = 0; i < a.length; i++){
+        for (let j = 0; j < b.length; j++)
+        if (a[i]*a[i] == b[j]) {
+                b.splice(j, 1)
+            }
     }
-    return buba
+    return true
 }
 
-a = [[78,5],[19,15],[67,7],[67,13],[65,19],[86,16],[55,5],[13,22]]
+c = [121, 144, 19, 161, 19, 144, 19, 11]
 
-console.log(openOrSenior(a))
+d = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+
+console.log(comp(c,d))
