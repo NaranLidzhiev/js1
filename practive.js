@@ -1,15 +1,15 @@
-function comp(a, b){
-    for (let i = 0; i < a.length; i++){
-        for (let j = 0; j < b.length; j++)
-        if (a[i]*a[i] == b[j]) {
-                b.splice(j, 1)
-            }
+function comb(b){
+    output = 1
+    count =0
+    while (count < b) {
+        count += output ** 3
+        if (count === b){
+            return output
+        }
+        output +=1
     }
-    return true
+    return -1
 }
 
-c = [121, 144, 19, 161, 19, 144, 19, 11]
+console.log(comb(4183059834009))
 
-d = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
-
-console.log(comp(c,d))
