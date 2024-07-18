@@ -1,14 +1,24 @@
+'use strict';
 
-function removeSmallest(numbers) {
-    const copy = numbers.slice(0)
-    let smallestValue = numbers.indexOf(Math.min(...numbers))
-    copy.splice(smallestValue, 1);
-    return copy
-}
+// Создаётся объект promise
+let promise = new Promise((resolve, reject) => {
 
-b=[123, 67, 1, 24, 99]
-console.log(removeSmallest(b))
+   setTimeout(() => {
+      // переведёт промис в состояние fulfilled с результатом "result"
+      resolve("result");
+   }, 1000);
 
-// console.log(a)
+});
 
-
+// promise.then навешивает обработчики на успешный результат или ошибку
+promise
+    .then(
+        result => {
+           // первая функция-обработчик - запустится при вызове resolve
+           console.log("Fulfilled: " + result); // result - аргумент resolve
+        },
+        error => {
+           // вторая функция - запустится при вызове reject
+           console.log("Rejected: " + error); // error - аргумент reject
+        }
+    );
