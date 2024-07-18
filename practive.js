@@ -1,14 +1,9 @@
-let str = "Это моя винтовка. Таких винтовок много но это - моя"
-console.log(str.match(/моя/gi))
-console.log(str.match(/моя/i))
-console.log(str.match(/КАСКАД/gi))
+let number = '7-903-540-04-37'
+let regex = new RegExp(/\d/gi)
 
-beta = str.replace(/винтовка/gi, 'кошка')
-console.log(beta)
-
-if (/много/i.test(str)){
-   console.log("True")
-} else{
-   console.log("False")
+let a = number.match(regex)
+let str = ''
+for (const aKey in a) {
+   str += a[aKey]
 }
-
+console.log(str)
